@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACI,uBADmB,CACnB,aAAa,CAAC;EACV,KAAK,EAAE,IAAI;EAEX,eAAe,EAAE,IAAI;EACrB,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,MAAM;EACjB,UAAU,EAAE,iBAAiB;CAKhC;;AAZL,AASQ,uBATe,CACnB,aAAa,AAQR,MAAM,CAAC;EACJ,KAAK,EAAE,OAAO;CACjB",
-    "sources": [
-        "LoginButton.styles.scss"
-    ],
-    "names": [],
-    "file": "LoginButton.styles.css"
-}

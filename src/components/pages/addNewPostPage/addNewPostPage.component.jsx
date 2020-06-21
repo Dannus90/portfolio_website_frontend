@@ -6,6 +6,7 @@ import { validateInput } from "../../../Utilities/validation/inputValidation";
 import LayoutSinglePost from "../../layout/layout/layoutSinglePost.component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+require("dotenv").config();
 
 const AddNewPostPage = () => {
     const [image, setImage] = useState("");

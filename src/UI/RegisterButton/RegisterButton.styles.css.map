@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACI,0BADsB,CACtB,gBAAgB,CAAC;EACb,KAAK,EAAE,IAAI;EACX,eAAe,EAAE,IAAI;EACrB,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,MAAM;CAKpB;;AAVL,AAOQ,0BAPkB,CACtB,gBAAgB,AAMX,MAAM,CAAC;EACJ,KAAK,EAAE,OAAO;CACjB",
-    "sources": [
-        "RegisterButton.styles.scss"
-    ],
-    "names": [],
-    "file": "RegisterButton.styles.css"
-}
