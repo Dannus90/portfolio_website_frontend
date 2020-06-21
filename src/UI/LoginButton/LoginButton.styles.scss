@@ -1,0 +1,14 @@
+.login-button-container {
+    .login-button {
+        color: #fff;
+
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3rem;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            color: #c53030;
+        }
+    }
+}

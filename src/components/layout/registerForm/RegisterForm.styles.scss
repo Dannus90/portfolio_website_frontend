@@ -1,0 +1,89 @@
+.register-form-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #fff;
+    padding: 3rem 5rem;
+    margin: 10rem;
+    width: 40rem;
+    border-radius: 0.3rem;
+    box-shadow: -2px -1px 4px -3px rgba(255, 255, 255, 0.75);
+
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #3e464b;
+    }
+
+    .register-form {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        label {
+            font-size: 0.8rem;
+            color: #42474d;
+            font-weight: 500;
+            line-height: 2rem;
+        }
+
+        .login-input {
+            padding: 0.4rem 1.8rem;
+            height: 40px;
+            margin-bottom: 0.8rem;
+            border: 1px solid #cecece;
+            outline: none;
+
+            &:active,
+            &:focus {
+                box-shadow: 1px 1px 5px 1px rgba($color: #206a74, $alpha: 0.5);
+            }
+        }
+        .password-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .single-password-input-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .register-submit-button {
+            width: 50%;
+            margin: auto;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            color: #fafafa;
+            background-color: #c53030;
+            font-size: 1.2rem;
+            border-radius: 0.2rem;
+            transition: transform 0.2s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+            }
+            &:active,
+            &:focus {
+                outline: none;
+            }
+
+            &:active {
+                transform: scale(0.85);
+            }
+        }
+    }
+    p {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #42474d;
+        font-weight: 500;
+        line-height: 2rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

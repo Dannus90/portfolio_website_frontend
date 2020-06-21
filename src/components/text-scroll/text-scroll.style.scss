@@ -1,0 +1,27 @@
+// STYLING DYNAMIC TEXT
+.dynamic-text {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    padding: 0 5rem;
+    padding-top: 20rem;
+    line-height: 2.2rem;
+    text-align: center;
+}
+
+.span-color {
+    color: #febe3e;
+}
+
+@keyframes fadeaway {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,121 @@
+.singlePostPage-wrapper {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding-top: 10rem;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.singlePostPage-wrapper .singlePost-container {
+  background-color: #fff;
+  width: 75%;
+  margin-bottom: 10rem;
+  padding: 5rem;
+  border-radius: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: -2px -1px 8px -3px rgba(255, 255, 255, 0.75);
+          box-shadow: -2px -1px 8px -3px rgba(255, 255, 255, 0.75);
+}
+
+.singlePostPage-wrapper .singlePost-container figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.singlePostPage-wrapper .singlePost-container figure img {
+  width: 70%;
+  margin: auto;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.singlePostPage-wrapper .singlePost-container-title {
+  color: #000;
+  font-size: 3rem;
+  margin: 2rem 0;
+  line-height: 3.5rem;
+}
+
+.singlePostPage-wrapper .singlePost-container-author-date {
+  color: #000;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.singlePostPage-wrapper .singlePost-container-author-date .by-text {
+  font-weight: bold;
+}
+
+.singlePostPage-wrapper .singlePost-container-author-date .author {
+  font-size: 1rem;
+}
+
+.singlePostPage-wrapper .singlePost-container-author-date .date {
+  font-size: 1rem;
+}
+
+.singlePostPage-wrapper .singlePost-container-return-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px 0 20px 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  -webkit-box-shadow: 0px 0px 4px -3px rgba(255, 255, 255, 0.75);
+          box-shadow: 0px 0px 4px -3px rgba(255, 255, 255, 0.75);
+  background-color: #c53030;
+}
+
+.singlePostPage-wrapper .singlePost-container-return-button .back-to-blog-icon {
+  font-size: 1.05rem;
+  margin-right: 0.5rem;
+}
+
+.singlePostPage-wrapper .singlePost-container-item-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 20px 0 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  -webkit-box-shadow: -2px -1px 4px -3px rgba(255, 255, 255, 0.75);
+          box-shadow: -2px -1px 4px -3px rgba(255, 255, 255, 0.75);
+}
+
+.singlePostPage-wrapper .singlePost-container-item-description {
+  line-height: 2rem;
+}
+/*# sourceMappingURL=singlePost.styles.css.map */

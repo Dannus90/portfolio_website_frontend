@@ -1,0 +1,48 @@
+.main-background-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    background-image: url("https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 1;
+
+    &__overlay {
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0.75;
+        object-fit: cover;
+        clip-path: polygon(
+            50% 0%,
+            100% 0,
+            100% 60%,
+            88% 100%,
+            12% 100%,
+            0% 60%,
+            0 0
+        );
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 65.625rem) {
+    .main-background-content {
+        &__overlay {
+            clip-path: none;
+        }
+    }
+}

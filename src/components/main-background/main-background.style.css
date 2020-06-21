@@ -1,0 +1,50 @@
+.main-background-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-image: url("https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 1;
+}
+
+.main-background-content__overlay {
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.75;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 60%, 88% 100%, 12% 100%, 0% 60%, 0 0);
+          clip-path: polygon(50% 0%, 100% 0, 100% 60%, 88% 100%, 12% 100%, 0% 60%, 0 0);
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 65.625rem) {
+  .main-background-content__overlay {
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+}
+/*# sourceMappingURL=main-background.style.css.map */

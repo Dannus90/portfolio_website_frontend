@@ -1,0 +1,88 @@
+.navbar-container-button-container {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+}
+
+.navbar-container-button {
+    background-color: #fff;
+
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: -2px -1px 8px -3px rgba(255, 255, 255, 0.75);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        background-color: #c53030;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &:hover &--icon::before {
+        top: -10px;
+        transform: rotate(-270deg);
+        width: 17px;
+        left: 8px;
+        height: 3px;
+        background-color: #fff;
+    }
+
+    &:hover &--icon::after {
+        top: 10px;
+        transform: rotate(270deg);
+        width: 17px;
+        left: 8px;
+        height: 3px;
+        background-color: #fff;
+    }
+
+    &:hover &--icon {
+        height: 3px;
+        background-color: #fff;
+        transform: rotate(360deg);
+        width: 34px;
+    }
+
+    &--icon {
+        position: relative;
+        margin-top: 34px;
+
+        &,
+        &::before,
+        &::after {
+            width: 30px;
+            height: 2px;
+            background-color: #000;
+            display: inline-block;
+            transition: all 0.3s ease-out;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        &::before {
+            top: -8px;
+        }
+
+        &::after {
+            top: 8px;
+        }
+    }
+}
+
+.navbar-container-checkbox {
+    display: none;
+}

@@ -1,0 +1,87 @@
+.slider-page-wrapper {
+    width: 100%;
+    padding: 2.5rem 0;
+    background: linear-gradient(
+        to right bottom,
+        rgba(34, 19, 19, 1) 0%,
+        rgba(116, 18, 18, 1) 100%
+    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    // linear-gradient(to right bottom, #fd1010 0%, #000000 100%) <- Backup gradient
+    .btn {
+        padding: 0.4rem 2.8rem;
+        font-size: 2rem;
+        color: #fff;
+        background: #c53030;
+        box-shadow: 0px 0px 2px 0px #fff;
+        border-radius: 2rem;
+        transition: box-shadow 1s ease-in-out, transform 0.3s ease-in;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 4px 0px #fff;
+        }
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    .btn-left {
+        margin-right: 2rem;
+    }
+
+    .btn-right {
+        margin-left: 2rem;
+    }
+
+    .slider-container {
+        height: 100%;
+        width: 100%;
+
+        .slider-header {
+            width: 5rem;
+            text-align: center;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                letter-spacing: 0.4rem;
+
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+                padding: 3.5rem 0;
+                color: #fff;
+                text-transform: uppercase;
+                text-shadow: -1px -1px 0px #ffffff;
+            }
+        }
+
+        .cards-slider {
+            max-width: 36rem;
+            height: 30rem;
+            margin: 0 auto;
+            position: relative;
+
+            &-wrapper {
+                display: flex;
+                position: absolute;
+                transition: transform 400ms
+                    cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            }
+        }
+    }
+}
+
+// Linear Gradient

@@ -1,0 +1,12 @@
+.register-button-container {
+    .register-button {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3rem;
+
+        &:hover {
+            color: #c53030;
+        }
+    }
+}
