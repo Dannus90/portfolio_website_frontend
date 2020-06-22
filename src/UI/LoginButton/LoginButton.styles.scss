@@ -3,12 +3,17 @@
         color: #fff;
 
         text-decoration: none;
-        font-weight: bold;
-        font-size: 1.3rem;
-        transition: all 0.2s ease-out;
+        background-color: #43ad47;
+        padding: 0.2rem 0.8rem;
+        border-radius: 1.2rem;
+        display: inline-block;
+
+        font-size: 1rem;
+        transition: all 0.5s ease-out;
+        margin-right: 1rem;
 
         &:hover {
-            color: #c53030;
+            transform: scale(1.05);
         }
     }
 }

@@ -11,33 +11,40 @@
 
     .navbar-authcontainer {
         display: flex;
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: flex-end;
         position: absolute;
-        top: 115%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    // [data-src]::before {
-    //     display: block;
-    //     content: "";
-    //     padding-top: calc(100% * 2 / 3);
-    // }
+        right: 8rem;
 
-    // img::before {
-    //     display: block;
-    //     content: "";
-    //     padding-top: calc(100% * 2 / 3);
-    // }
+        // position: absolute;
+        // top: 115%;
+        // left: 50%;
+    }
 
     .main-logo {
         height: auto;
-        max-width: 100%;
+        width: 100%;
     }
 
     &__logo-container {
         margin-left: 30px;
         color: #fff;
+    }
+
+    .signed-in-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: absolute;
+        right: 8rem;
+
+        p {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+        }
     }
 }
 

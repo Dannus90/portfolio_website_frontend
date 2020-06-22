@@ -3,12 +3,19 @@ import "./LoginForm.styles.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { loginValidation } from "../../../Utilities/validation/loginValidation";
+import SpinnerSmallDark from "../../../UI/SpinnerSmallDark/spinnerSmallDark.component";
+import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { signIn } from "../../../redux/auth/auth.actions";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginMessage, setLoginMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const history = useHistory();
 
     const emailHandler = (e) => {
         setEmail(e.target.value);
@@ -20,6 +27,7 @@ const LoginForm = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
+        setIsLoading(true);
         if (loginValidation(email)) {
             let dataToSubmit = {
                 email: email,
@@ -30,20 +38,27 @@ const LoginForm = () => {
                 .post("http://localhost:5000/api/user/login", dataToSubmit)
                 .then((res) => {
                     if (res.status === 200) {
+                        console.log(res.data.userName);
                         setLoginMessage("You have successfully logged in!");
+                        setIsLoading(false);
+                        props.signInHandler(
+                            `Signed in as ${res.data.userName}`
+                        );
                         setShowPopup(true);
                         setTimeout(() => {
                             setShowPopup(false);
-                        }, 3000);
+                            history.push("/");
+                        }, 2000);
                     } else {
                         const message =
                             res.data.charAt(0).toUpperCase() +
                             res.data.slice(1);
                         setLoginMessage(message);
+                        setIsLoading(false);
                         setShowPopup(true);
                         setTimeout(() => {
                             setShowPopup(false);
-                        }, 3000);
+                        }, 4000);
                     }
                 })
                 .catch((err) => {
@@ -56,22 +71,25 @@ const LoginForm = () => {
                         errorMessage.slice(1);
 
                     setLoginMessage(uppercaseFirstLetterMessage);
+                    setIsLoading(false);
                     setShowPopup(true);
                     setTimeout(() => {
                         setShowPopup(false);
-                    }, 3000);
+                    }, 4000);
                 });
         } else {
             setLoginMessage("Please enter a valid email!");
+            setIsLoading(false);
             setShowPopup(true);
             setTimeout(() => {
                 setShowPopup(false);
-            }, 3000);
+            }, 4000);
         }
     };
     return (
         <div className="login-form-container">
             <h2>Login</h2>
+
             <form onSubmit={submitHandler} className="login-form">
                 <label htmlFor="email">Email Address</label>
                 <input
@@ -89,23 +107,38 @@ const LoginForm = () => {
                     value={password}
                     onChange={(e) => passwordHandler(e)}
                 />
-                <input
-                    type="submit"
-                    value="Login"
-                    className="login-submit-button"
-                />
+                {showPopup ? (
+                    <div className="popup-message">
+                        <p className="popup-message-paragraph">
+                            {loginMessage}
+                        </p>
+                    </div>
+                ) : null}
+                {!isLoading ? (
+                    <input
+                        type="submit"
+                        value="Login"
+                        className="login-submit-button"
+                    />
+                ) : null}
+                {isLoading ? (
+                    <div className="login-small-spinner">
+                        <SpinnerSmallDark />
+                    </div>
+                ) : null}
             </form>
             <p>Forgot password?</p>
             <Link to="/register" className="register-link">
                 No account yet?
             </Link>
-            {showPopup ? (
-                <div className="popup-message">
-                    <p className="popup-message-paragraph">{loginMessage}</p>
-                </div>
-            ) : null}
         </div>
     );
 };
 
-export default LoginForm;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signInHandler: (userName) => dispatch(signIn(userName)),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(LoginForm);

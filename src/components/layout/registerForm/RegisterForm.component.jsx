@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { registerValidation } from "../../../Utilities/validation/registerValidation";
 import "./RegisterForm.styles.scss";
 import axios from "axios";
+import SpinnerSmallDark from "../../../UI/SpinnerSmallDark/spinnerSmallDark.component";
+import { useHistory } from "react-router-dom";
 
 const RegisterForm = () => {
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [registerMessage, setRegisterMessage] = useState("");
+    const [showPopup, setShowPopup] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const history = useHistory();
 
     const fullNameHandler = (e) => {
         setFullName(e.target.value);
@@ -26,8 +33,16 @@ const RegisterForm = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
+        setIsLoading(true);
 
-        if (registerValidation(fullName, email, password, confirmPassword)) {
+        const { validated, msg } = registerValidation(
+            fullName,
+            email,
+            password,
+            confirmPassword
+        );
+
+        if (validated) {
             let dataToSubmit = {
                 fullName: fullName,
                 email: email,
@@ -37,12 +52,30 @@ const RegisterForm = () => {
 
             axios
                 .post("http://localhost:5000/api/user/register", dataToSubmit)
-                .then((res) => {})
+                .then((res) => {
+                    setRegisterMessage(res.data.message);
+                    setShowPopup(true);
+                    setIsLoading(false);
+                    setTimeout(() => {
+                        setShowPopup(false);
+                        history.push("/login");
+                    }, 2000);
+                })
                 .catch((err) => {
-                    console.log(`Message not sent! Error! ${err}`);
+                    setRegisterMessage(err.request.responseText);
+                    setShowPopup(true);
+                    setIsLoading(false);
+                    setTimeout(() => {
+                        setShowPopup(false);
+                    }, 4000);
                 });
         } else {
-            console.log("Validation failed!");
+            setRegisterMessage(msg);
+            setShowPopup(true);
+            setIsLoading(false);
+            setTimeout(() => {
+                setShowPopup(false);
+            }, 4000);
         }
     };
 
@@ -91,11 +124,32 @@ const RegisterForm = () => {
                         />
                     </div>
                 </div>
-                <input
-                    type="submit"
-                    value="Register"
-                    className="register-submit-button"
-                />
+                <div className="password-rules-container">
+                    <p className="password-rules-paragraph">
+                        *Password must be atleast 8 character long and contain
+                        one of each: one lowercase char, one uppercase char, one
+                        numeric char and one special char.
+                    </p>
+                </div>
+                {showPopup ? (
+                    <div className="popup-message">
+                        <p className="popup-message-paragraph">
+                            {registerMessage}
+                        </p>
+                    </div>
+                ) : null}
+                {!isLoading ? (
+                    <input
+                        type="submit"
+                        value="Register"
+                        className="register-submit-button"
+                    />
+                ) : null}
+                {isLoading ? (
+                    <div className="register-small-spinner">
+                        <SpinnerSmallDark />
+                    </div>
+                ) : null}
             </form>
         </div>
     );

@@ -7,6 +7,7 @@ import NavButton from "../../UI/NavButton/NavButton.component";
 import LoginButton from "../../UI/LoginButton/LoginButton.component";
 import RegisterButton from "../../UI/RegisterButton/RegisterButton.component";
 import CenterNav from "../../components/center-nav/center-nav.component";
+import SignoutButton from "../../UI/SignoutButton/SignoutButton.component";
 import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
@@ -31,17 +32,26 @@ const Navbar = (props) => {
                     />
                 </Link>
             </div>
-            {patternLogin.test(window.location.href) ? (
+            {props.isSignedIn ? (
+                <div className="signed-in-container">
+                    <p>{props.userName}</p>
+                    <SignoutButton />
+                </div>
+            ) : null}
+
+            {patternLogin.test(window.location.href) && !props.isSignedIn ? (
                 <div className="navbar-authcontainer">
                     <RegisterButton />
                 </div>
-            ) : patternRegister.test(window.location.href) ? (
+            ) : patternRegister.test(window.location.href) &&
+              !props.isSignedIn ? (
                 <div className="navbar-authcontainer">
                     <LoginButton />
                 </div>
             ) : null}
             {!patternRegister.test(window.location.href) &&
-            !patternLogin.test(window.location.href) ? (
+            !patternLogin.test(window.location.href) &&
+            !props.isSignedIn ? (
                 <div className="navbar-authcontainer">
                     <LoginButton />
                     <RegisterButton />
@@ -57,6 +67,8 @@ const Navbar = (props) => {
 const mapStateToProps = (state) => {
     return {
         show: state.navigationReducer.show,
+        isSignedIn: state.authReducer.isSignedIn,
+        userName: state.authReducer.userName,
     };
 };
 

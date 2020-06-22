@@ -2,7 +2,7 @@ import React, { useReducer, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./contact.styles.scss";
 import { checkValidity } from "../../../Utilities/validation/validationRules";
-import SpinnerContact from "../../../UI/SpinnerSmall/spinnerSmall.component";
+import SpinnerSmallLight from "../../../UI/SpinnerSmallLight/spinnerSmallLight.component";
 import ContactPopup from "../../../UI/ContactModal/ContactPopup.component";
 import axios from "axios";
 
@@ -404,7 +404,7 @@ const Contact = () => {
                     ) : null}
                     {isLoading ? (
                         <div className="show-spinner">
-                            <SpinnerContact />
+                            <SpinnerSmallLight />
                         </div>
                     ) : null}
                 </form>

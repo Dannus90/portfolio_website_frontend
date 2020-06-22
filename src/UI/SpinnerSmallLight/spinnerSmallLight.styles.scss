@@ -1,15 +1,15 @@
 :root {
-    --sk-sizeBig: 120px;
-    --sk-colorBig: #000;
+    --sk-sizeSmallLight: 40px;
+    --sk-colorSmallLight: #fff;
 }
 
 .sk-center {
     margin: auto;
 }
 
-.sk-chase-big {
-    width: var(--sk-sizeBig);
-    height: var(--sk-sizeBig);
+.sk-chase-small {
+    width: var(--sk-sizeSmallLight);
+    height: var(--sk-sizeSmallLight);
     position: relative;
     animation: sk-chase 2.5s infinite linear both;
 
@@ -27,7 +27,7 @@
         display: block;
         width: 25%;
         height: 25%;
-        background-color: var(--sk-colorBig);
+        background-color: var(--sk-colorSmallLight);
         border-radius: 100%;
         animation: sk-chase-dot-before 2s infinite ease-in-out both;
     }
