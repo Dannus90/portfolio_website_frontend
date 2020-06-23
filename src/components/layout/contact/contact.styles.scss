@@ -117,8 +117,8 @@
     }
 
     label {
-        text-transform: uppercase;
         width: 65%;
+        font-size: 0.8rem;
         font-weight: 700;
         padding: 0.2rem 0;
         color: #febe3e;
@@ -147,7 +147,7 @@
         &::placeholder {
             color: #000;
             font-family: fantasy;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
 
             opacity: 0.5;
         }
@@ -183,7 +183,7 @@
         &::placeholder {
             color: #000;
             font-family: fantasy;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
 
             opacity: 0.5;
         }
@@ -196,7 +196,7 @@
             padding: 0.5rem 2.5rem 2rem 0.5rem;
             outline: none;
             border: none;
-            font-size: 16px;
+            font-size: 0.7rem;
             box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.6);
             resize: none;
         }
@@ -226,7 +226,7 @@
     display: flex;
     text-align: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     &:nth-child(2) {
         padding: 1rem 0;
@@ -251,7 +251,7 @@
     font-size: 1rem;
     font-weight: bold;
     border-radius: 100px;
-    box-shadow: -2px -1px 8px -3px rgba(255, 255, 255, 0.75);
+    box-shadow: -2px -1px 4px -3px rgba(255, 255, 255, 0.75);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 

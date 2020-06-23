@@ -11,7 +11,7 @@
 
     h2 {
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         color: #3e464b;
     }
 
@@ -25,12 +25,13 @@
             color: #42474d;
             font-weight: 500;
             line-height: 2rem;
+            padding-top: 0.5rem;
         }
 
         .login-input {
             padding: 0.4rem 0.8rem;
             height: 40px;
-            margin-bottom: 0.8rem;
+
             border: 1px solid #cecece;
             outline: none;
 
@@ -38,6 +39,13 @@
             &:focus {
                 box-shadow: 1px 1px 5px 1px rgba($color: #206a74, $alpha: 0.5);
             }
+        }
+
+        .required-paragraph {
+            color: #f56565;
+            text-align: left;
+            font-size: 0.8rem;
+            line-height: 1.5rem;
         }
 
         .login-submit-button {
@@ -103,19 +111,15 @@
     //Popupmessage
     .popup-message {
         display: block;
-        background: radial-gradient(
-            rgba(197, 48, 48, 0.85) 0%,
-            rgba(14, 13, 38, 0.85) 100%
-        );
+        background-color: #fff5f5;
         padding: 0.5rem 1rem;
         width: 100%;
-        border: none;
+        border: 1px solid #e53e3e;
+        border-radius: 0.15rem;
         &-paragraph {
-            color: #fff;
+            color: #f56565;
             font-size: 0.8rem;
-            font-weight: bold;
-            line-height: 1rem;
-            // text-transform: capitalize;
+            line-height: 0.8rem;
         }
     }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LoginForm.styles.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -7,13 +7,26 @@ import SpinnerSmallDark from "../../../UI/SpinnerSmallDark/spinnerSmallDark.comp
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signIn } from "../../../redux/auth/auth.actions";
+import { locale } from "moment";
 
 const LoginForm = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [loginMessage, setLoginMessage] = useState("");
+    const [loginErrorMessage, setLoginErrorMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [showEmailRequired, setShowEmailRequired] = useState(false);
+    const [showPasswordRequired, setShowPasswordRequired] = useState(false);
+
+    useEffect(() => {
+        if (email !== "") {
+            setShowEmailRequired(false);
+        }
+
+        if (password !== "") {
+            setShowPasswordRequired(false);
+        }
+    }, [email, password]);
 
     const history = useHistory();
 
@@ -27,6 +40,18 @@ const LoginForm = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
+        if (email === "" && password === "") {
+            setShowEmailRequired(true);
+            setShowPasswordRequired(true);
+            return;
+        } else if (email === "") {
+            setShowEmailRequired(true);
+            return;
+        } else if (password === "") {
+            setShowPasswordRequired(true);
+            return;
+        }
+
         setIsLoading(true);
         if (loginValidation(email)) {
             let dataToSubmit = {
@@ -37,23 +62,45 @@ const LoginForm = (props) => {
             axios
                 .post("http://localhost:5000/api/user/login", dataToSubmit)
                 .then((res) => {
+                    console.log(res.data);
                     if (res.status === 200) {
-                        console.log(res.data.userName);
-                        setLoginMessage("You have successfully logged in!");
-                        setIsLoading(false);
-                        props.signInHandler(
-                            `Signed in as ${res.data.userName}`
+                        console.log(res.data);
+                        props.signInHandler({
+                            isAdmin: res.data.userInfo.isAdmin,
+                            loggedInMessage: `Signed in as ${res.data.userInfo.fullName}`,
+                            token: res.data.token,
+                            expiresAt: res.data.expiresAt,
+                            userInfo: res.data.userInfo,
+                            isAuthenticated:
+                                new Date().getTime() / 1000 <
+                                res.data.expiresAt,
+                        });
+
+                        localStorage.setItem(
+                            "isAdmin",
+                            res.data.userInfo.isAdmin
                         );
-                        setShowPopup(true);
+                        localStorage.setItem("token", res.data.token);
+                        localStorage.setItem(
+                            "userInfo",
+                            JSON.stringify(res.data.userInfo)
+                        );
+                        localStorage.setItem("expiresAt", res.data.expiresAt);
+                        localStorage.setItem("isSignedIn", true);
+                        localStorage.setItem(
+                            "loggedInMessage",
+                            `Signed in as ${res.data.userInfo.fullName}`
+                        );
+
                         setTimeout(() => {
-                            setShowPopup(false);
+                            setIsLoading(false);
                             history.push("/");
-                        }, 2000);
+                        }, 1000);
                     } else {
                         const message =
                             res.data.charAt(0).toUpperCase() +
                             res.data.slice(1);
-                        setLoginMessage(message);
+                        setLoginErrorMessage(message);
                         setIsLoading(false);
                         setShowPopup(true);
                         setTimeout(() => {
@@ -62,6 +109,7 @@ const LoginForm = (props) => {
                     }
                 })
                 .catch((err) => {
+                    console.log(err);
                     let errorMessage = err.request.responseText.replace(
                         /['"]+/g,
                         ""
@@ -70,7 +118,7 @@ const LoginForm = (props) => {
                         errorMessage.charAt(0).toUpperCase() +
                         errorMessage.slice(1);
 
-                    setLoginMessage(uppercaseFirstLetterMessage);
+                    setLoginErrorMessage(uppercaseFirstLetterMessage);
                     setIsLoading(false);
                     setShowPopup(true);
                     setTimeout(() => {
@@ -78,7 +126,7 @@ const LoginForm = (props) => {
                     }, 4000);
                 });
         } else {
-            setLoginMessage("Please enter a valid email!");
+            setLoginErrorMessage("Please enter a valid email!");
             setIsLoading(false);
             setShowPopup(true);
             setTimeout(() => {
@@ -89,7 +137,13 @@ const LoginForm = (props) => {
     return (
         <div className="login-form-container">
             <h2>Login</h2>
-
+            {showPopup ? (
+                <div className="popup-message">
+                    <p className="popup-message-paragraph">
+                        {loginErrorMessage}
+                    </p>
+                </div>
+            ) : null}
             <form onSubmit={submitHandler} className="login-form">
                 <label htmlFor="email">Email Address</label>
                 <input
@@ -99,6 +153,11 @@ const LoginForm = (props) => {
                     value={email}
                     onChange={(e) => emailHandler(e)}
                 />
+                {showEmailRequired && (
+                    <span className="required-paragraph">
+                        Email is required
+                    </span>
+                )}
                 <label htmlFor="password">Password</label>
                 <input
                     className="login-input"
@@ -107,13 +166,12 @@ const LoginForm = (props) => {
                     value={password}
                     onChange={(e) => passwordHandler(e)}
                 />
-                {showPopup ? (
-                    <div className="popup-message">
-                        <p className="popup-message-paragraph">
-                            {loginMessage}
-                        </p>
-                    </div>
-                ) : null}
+                {showPasswordRequired && (
+                    <span className="required-paragraph">
+                        Password is required
+                    </span>
+                )}
+
                 {!isLoading ? (
                     <input
                         type="submit"

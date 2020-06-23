@@ -1,14 +1,17 @@
 .new-post-page-wrapper {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-image: url("https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    // background-color: rgba(0, 0, 0, 0.85);
 
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         "Helvetica Neue", Arial, sans-serif;
+
     h2 {
         color: #fff;
         font-size: 3rem;
@@ -18,25 +21,36 @@
             0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
             0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
         padding: 5rem 0;
+        z-index: 50;
+    }
+
+    .new-post-form-container-overlay {
+        background-color: #000;
+        opacity: 0.7;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
     }
     .new-post-form-container {
-        background: #980000;
+        background: #981414;
         margin-bottom: 10rem;
         padding: 5rem 10rem;
-        border-radius: 20px;
+        border-radius: 5px;
         position: relative;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        box-shadow: -2px -1px 8px -3px rgba(255, 255, 255, 0.75);
+        box-shadow: -2px -1px 2px -3px rgba(255, 255, 255, 0.75);
 
         #newPost-form {
             .required-info {
                 position: absolute;
-                right: 1.5rem;
-                top: 0.25rem;
+                right: 1.2rem;
+                top: 1rem;
                 color: #fff;
 
                 p {
@@ -50,7 +64,6 @@
                 align-items: center;
 
                 label {
-                    text-transform: uppercase;
                     font-weight: 700;
                     padding: 0.2rem 0;
                     color: #febe3e;
@@ -69,6 +82,14 @@
                     box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.6);
                     color: #000;
                     text-align: center;
+
+                    &::placeholder {
+                        color: #000;
+                        font-family: fantasy;
+                        font-size: 0.9rem;
+
+                        opacity: 0.5;
+                    }
                 }
 
                 .input-container {
@@ -113,7 +134,7 @@
                     padding: 0.5rem 1rem;
                     font-family: "Roboto", sans-serif;
                     width: 35%;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     outline: none;
                     border: none;
                     background: #fff;
@@ -137,6 +158,14 @@
                     font-size: 1.2rem;
                     box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.6);
                     resize: none;
+
+                    &::placeholder {
+                        color: #000;
+                        font-family: fantasy;
+                        font-size: 0.9rem;
+
+                        opacity: 0.5;
+                    }
                 }
             }
             .custom-file-upload {
@@ -165,7 +194,7 @@
                 font-size: 1rem;
                 font-weight: bold;
                 border-radius: 100px;
-                box-shadow: -2px -1px 8px -3px rgba(255, 255, 255, 0.75);
+                box-shadow: -2px -1px 4px -3px rgba(255, 255, 255, 0.75);
                 transition: all 0.2s ease-in-out;
                 cursor: pointer;
 
@@ -190,7 +219,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 20px 0 20px 0;
+    border-radius: 5px 0 5px 0;
     color: #000;
     font-weight: bold;
     font-size: 1.2rem;

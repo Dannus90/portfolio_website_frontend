@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-// import ScrollToTop from "react-router-scroll-top";
 import ScrollToTop from "./Utilities/scrollToTop";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -11,7 +10,6 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
     faCheckSquare,
-    faCoffee,
     faUser,
     faPhone,
     faLocationArrow,
@@ -29,7 +27,6 @@ import {
 library.add(
     fab,
     faCheckSquare,
-    faCoffee,
     faUser,
     faPhone,
     faLocationArrow,

@@ -1,8 +1,8 @@
 import { AuthActionTypes } from "./auth.types";
 
-export const signIn = (userName) => ({
+export const signIn = (data) => ({
     type: AuthActionTypes.SIGNED_IN,
-    payload: userName,
+    payload: data,
 });
 
 export const signOut = () => ({

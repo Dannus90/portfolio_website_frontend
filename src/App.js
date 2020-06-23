@@ -6,22 +6,48 @@ import SinglePostPage from "./components/pages/singlePostPage/singlePost.compone
 import AddNewPostPage from "./components/pages/addNewPostPage/addNewPostPage.component";
 import RegisterPage from "./components/pages/registerPage/RegisterPage.component";
 import LoginPage from "./components/pages/loginPage/LoginPage.component";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+import ReducerState from "./components/pages/reducerState/reducerState";
+import { connect } from "react-redux";
 
-function App() {
+function App(props) {
+    const AuthenticatedBlogRoute = ({ children, ...rest }) => {
+        return (
+            <Route
+                {...rest}
+                render={() =>
+                    props.isAuthenticated ? (
+                        <>{children}</>
+                    ) : (
+                        <Redirect to="/" />
+                    )
+                }
+            />
+        );
+    };
+
     return (
         <div className="App">
             <Switch>
                 <Route exact path="/gamesoverview" component={GamesOverview} />
+                <Route exact path="/reducerstate" component={ReducerState} />
                 <Route exact path="/blog" component={Blog} />
                 <Route exact path="/" component={HomePage} />
                 <Route path="/blog/singlepost" component={SinglePostPage} />
                 <Route exact path="/register" component={RegisterPage} />
                 <Route exact path="/login" component={LoginPage} />
-                <Route exact path="/blog/addpost" component={AddNewPostPage} />
+                <AuthenticatedBlogRoute exact path="/blog/addpost">
+                    <AddNewPostPage />
+                </AuthenticatedBlogRoute>
             </Switch>
         </div>
     );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        isAuthenticated: state.authReducer.isAuthenticated,
+    };
+};
+
+export default connect(mapStateToProps)(App);

@@ -113,6 +113,7 @@ const AddNewPostPage = () => {
         <Fragment>
             <LayoutSinglePost>
                 <div className="new-post-page-wrapper">
+                    <div className="new-post-form-container-overlay"></div>
                     <h2>Add Blog Post</h2>
                     <div className="new-post-form-container">
                         <form

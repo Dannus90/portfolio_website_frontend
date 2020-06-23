@@ -1,10 +1,28 @@
-import React, { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import "./blogPosts.styles.scss";
 import moment from "moment";
 import { categoryColors } from "../../../storage/categoryColors/categoryColors";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-const BlogPosts = ({ postData }) => {
+const BlogPosts = ({ postData, isAuthenticated }) => {
+    const [showPopup, setShowPopup] = useState(false);
+
+    function showAddPostConditionally() {
+        console.log("restarting!!");
+        if (isAuthenticated) {
+            return "/blog/addpost";
+        } else {
+            return "/blog";
+        }
+    }
+
+    function setPopupState() {
+        setShowPopup(true);
+        setTimeout(() => {
+            setShowPopup(false);
+        }, 4000);
+    }
     return (
         <Fragment>
             <h2 className="blogPosts-all-posts-header">All Posts</h2>
@@ -52,13 +70,35 @@ const BlogPosts = ({ postData }) => {
                     </Link>
                 ))}
             </div>
-            <Link to="/blog/addpost" className="add-blog-post-link">
+
+            <Link
+                onClick={setPopupState}
+                to={showAddPostConditionally}
+                className="add-blog-post-link"
+            >
                 <div className="add-blog-post-btn">
                     <p>Add New Post</p>
                 </div>
             </Link>
+            {showPopup ? (
+                <div className="show-isAuthenticated-popup">
+                    <p className="popup-paragraph">
+                        You need to{" "}
+                        <Link to="/login" className="login-paragraph">
+                            log in
+                        </Link>{" "}
+                        to be able to access this route
+                    </p>
+                </div>
+            ) : null}
         </Fragment>
     );
 };
 
-export default BlogPosts;
+const mapStateToProps = (state) => {
+    return {
+        isAuthenticated: state.authReducer.isAuthenticated,
+    };
+};
+
+export default connect(mapStateToProps)(BlogPosts);

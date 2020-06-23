@@ -365,9 +365,8 @@ const Contact = () => {
                     </div>
                     <div className="form-container-content">
                         <label htmlFor="message">
-                            Message <span className="label-span">*</span>
+                            Message<span className="label-span">*</span>
                         </label>
-
                         <div className="input-container">
                             <textarea
                                 placeholder="Leave a message between 50-200 characters"

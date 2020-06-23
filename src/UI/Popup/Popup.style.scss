@@ -6,9 +6,10 @@
     height: 60px;
     width: 60px;
     border-radius: 50%;
+
     background: radial-gradient(
-        rgba(197, 48, 48, 0.85) 0%,
-        rgba(14, 13, 38, 0.85) 100%
+        rgba(197, 48, 48, 1) 0%,
+        rgba(14, 13, 38, 1) 100%
     );
     display: flex;
     justify-content: center;
@@ -21,7 +22,7 @@
     position: fixed;
     top: 15%;
     left: 50%;
-    transform: translate(-750%, 150%);
+    transform: translate(-750%, 125%);
     text-align: center;
 
     ul {
@@ -66,12 +67,12 @@
     }
 
     80% {
-        transform: translate(0%, 150%);
+        transform: translate(0%, 125%);
     }
 
     100% {
         opacity: 1;
-        transform: translate(-50%, 150%);
+        transform: translate(-50%, 125%);
     }
 }
 
