@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../layout/layout/layout.component";
 import Pagination from "../../../UI/Pagination/pagination.component";
 import SpinnerBig from "../../../UI/SpinnerBig/spinnerBig.component";
@@ -7,16 +7,18 @@ import FeaturedBlogPosts from "../../layout/featuredBlogPosts/featuredBlogPosts.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import "./blog.styles.scss";
+import { motion } from "framer-motion";
+import { pageTransition } from "../../../Utilities/Transitions/Transitions";
 
 const Blog = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(3);
+    const postsPerPage = 3;
 
     useEffect(() => {
         setLoading(true);
-        axios.get("http://localhost:5000/api/addBlogPost").then((res) => {
+        axios.get(`${process.env.REACT_APP_API_URL}/BlogPosts`).then((res) => {
             setPosts(res.data);
             setLoading(false);
         });
@@ -31,7 +33,12 @@ const Blog = () => {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
-        <Fragment>
+        <motion.div
+            exit="out"
+            animate="in"
+            initial="out"
+            variants={pageTransition}
+        >
             {loading ? (
                 <div className="spinner-container">
                     <SpinnerBig />
@@ -61,7 +68,7 @@ const Blog = () => {
                     </Layout>
                 </div>
             ) : null}
-        </Fragment>
+        </motion.div>
     );
 };
 

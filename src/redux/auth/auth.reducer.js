@@ -11,6 +11,7 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
     state.isAuthenticated = new Date().getTime() / 1000 < state.expiresAt;
+
     switch (action.type) {
         case AuthActionTypes.SIGNED_IN:
             return {
@@ -27,7 +28,6 @@ const authReducer = (state = initialState, action) => {
             localStorage.removeItem("token");
             localStorage.removeItem("userInfo");
             localStorage.removeItem("expiresAt");
-            localStorage.removeItem("isSignedIn");
             localStorage.removeItem("loggedInMessage");
             return {
                 ...state,

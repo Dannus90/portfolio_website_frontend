@@ -7,7 +7,6 @@ import SpinnerSmallDark from "../../../UI/SpinnerSmallDark/spinnerSmallDark.comp
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { signIn } from "../../../redux/auth/auth.actions";
-import { locale } from "moment";
 
 const LoginForm = (props) => {
     const [email, setEmail] = useState("");
@@ -59,15 +58,19 @@ const LoginForm = (props) => {
                 password: password,
             };
 
+            console.log(process.env.REACT_APP_API_URL);
+
             axios
-                .post("http://localhost:5000/api/user/login", dataToSubmit)
+                .post(
+                    `${process.env.REACT_APP_API_URL}/user/login`,
+                    dataToSubmit
+                )
                 .then((res) => {
                     console.log(res.data);
                     if (res.status === 200) {
-                        console.log(res.data);
                         props.signInHandler({
                             isAdmin: res.data.userInfo.isAdmin,
-                            loggedInMessage: `Signed in as ${res.data.userInfo.fullName}`,
+                            loggedInMessage: res.data.userInfo.fullName,
                             token: res.data.token,
                             expiresAt: res.data.expiresAt,
                             userInfo: res.data.userInfo,
@@ -86,10 +89,9 @@ const LoginForm = (props) => {
                             JSON.stringify(res.data.userInfo)
                         );
                         localStorage.setItem("expiresAt", res.data.expiresAt);
-                        localStorage.setItem("isSignedIn", true);
                         localStorage.setItem(
                             "loggedInMessage",
-                            `Signed in as ${res.data.userInfo.fullName}`
+                            `${res.data.userInfo.fullName}`
                         );
 
                         setTimeout(() => {

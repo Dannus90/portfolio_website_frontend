@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAChB,QAAQ,EAAE,QAAQ;EAClB,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,qBAAqB;EAChC,MAAM,EAAE,IAAI;EACZ,IAAI,EAAE,GAAG;EACT,gBAAgB,EAAe,mBAAO;EACtC,OAAO,EAAE,IAAI;CAQhB;;AAhBD,AAUI,mBAVe,CAUf,CAAC,CAAC;EACE,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,SAAS;EAClB,WAAW,EAAE,IAAI;CACpB",
-    "sources": [
-        "ContactPopup.styles.scss"
-    ],
-    "names": [],
-    "file": "ContactPopup.styles.css"
-}

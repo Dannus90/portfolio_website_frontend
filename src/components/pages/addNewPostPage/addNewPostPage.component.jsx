@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./addNewPostPage.styles.scss";
 import moment from "moment";
@@ -6,6 +6,8 @@ import { validateInput } from "../../../Utilities/validation/inputValidation";
 import LayoutSinglePost from "../../layout/layout/layoutSinglePost.component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { pageTransition } from "../../../Utilities/Transitions/Transitions";
 require("dotenv").config();
 
 const AddNewPostPage = () => {
@@ -76,13 +78,15 @@ const AddNewPostPage = () => {
                 category: category,
                 blogPost: blogPost,
                 image: image,
-                date: moment().format("MMMM DD, YYYY"),
+                date: moment().format("YYYY-MM-DD"),
             };
 
             axios
-                .post("http://localhost:5000/api/addBlogPost", dataToSubmit)
+                .post(
+                    `${process.env.REACT_APP_API_URL}/BlogPosts`,
+                    dataToSubmit
+                )
                 .then((res) => {
-                    console.log("Success");
                     setLoading(false);
                     setShowPopup(true);
                     setPopupMessage("Your Blog Post has been commited!");
@@ -110,7 +114,12 @@ const AddNewPostPage = () => {
     };
 
     return (
-        <Fragment>
+        <motion.div
+            exit="out"
+            animate="in"
+            initial="out"
+            variants={pageTransition}
+        >
             <LayoutSinglePost>
                 <div className="new-post-page-wrapper">
                     <div className="new-post-form-container-overlay"></div>
@@ -228,7 +237,7 @@ const AddNewPostPage = () => {
                     </div>
                 </div>
             </LayoutSinglePost>
-        </Fragment>
+        </motion.div>
     );
 };
 

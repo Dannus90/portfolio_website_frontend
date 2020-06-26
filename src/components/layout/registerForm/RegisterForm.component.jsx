@@ -97,9 +97,11 @@ const RegisterForm = (props) => {
             };
 
             axios
-                .post("http://localhost:5000/api/user/register", dataToSubmit)
+                .post(
+                    `${process.env.REACT_APP_API_URL}/user/register`,
+                    dataToSubmit
+                )
                 .then((res) => {
-                    console.log(res);
                     if (res.status === 400) {
                         setRegisterMessage(res.data.message);
                         setShowPopup(true);
@@ -110,11 +112,32 @@ const RegisterForm = (props) => {
                         return;
                     }
 
-                    props.signInHandler(`Signed in as ${res.data.fullName}`);
+                    props.signInHandler({
+                        isAdmin: res.data.userInfo.isAdmin,
+                        loggedInMessage: res.data.userInfo.fullName,
+                        token: res.data.token,
+                        expiresAt: res.data.expiresAt,
+                        userInfo: res.data.userInfo,
+                        isAuthenticated:
+                            new Date().getTime() / 1000 < res.data.expiresAt,
+                    });
+
+                    localStorage.setItem("isAdmin", res.data.userInfo.isAdmin);
+                    localStorage.setItem("token", res.data.token);
+                    localStorage.setItem(
+                        "userInfo",
+                        JSON.stringify(res.data.userInfo)
+                    );
+                    localStorage.setItem("expiresAt", res.data.expiresAt);
+
+                    localStorage.setItem(
+                        "loggedInMessage",
+                        `${res.data.userInfo.fullName}`
+                    );
                     setTimeout(() => {
                         setIsLoading(false);
                         history.push("/");
-                    }, 2000);
+                    }, 1000);
                 })
                 .catch((err) => {
                     setRegisterMessage(err.request.responseText);

@@ -7,12 +7,14 @@ import LayoutSinglePost from "../../layout/layout/layoutSinglePost.component";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { motion } from "framer-motion";
+import { pageTransition } from "../../../Utilities/Transitions/Transitions";
 
 const SinglePostPage = (props) => {
     const [postData, setPostData] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/addBlogPost").then((res) => {
+        axios.get(`${process.env.REACT_APP_API_URL}/BlogPosts`).then((res) => {
             setPostData(res.data);
         });
     }, []);
@@ -28,7 +30,12 @@ const SinglePostPage = (props) => {
     }
 
     return (
-        <Fragment>
+        <motion.div
+            exit="out"
+            animate="in"
+            initial="out"
+            variants={pageTransition}
+        >
             {filteredPost && (
                 <Fragment>
                     <LayoutSinglePost>
@@ -83,7 +90,7 @@ const SinglePostPage = (props) => {
                     </LayoutSinglePost>
                 </Fragment>
             )}
-        </Fragment>
+        </motion.div>
     );
 };
 

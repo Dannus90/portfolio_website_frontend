@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useMemo } from "react";
 import "./blogPosts.styles.scss";
 import moment from "moment";
 import { categoryColors } from "../../../storage/categoryColors/categoryColors";
@@ -8,16 +8,16 @@ import { connect } from "react-redux";
 const BlogPosts = ({ postData, isAuthenticated }) => {
     const [showPopup, setShowPopup] = useState(false);
 
-    function showAddPostConditionally() {
-        console.log("restarting!!");
+    const showAddPostConditionally = useMemo(() => {
         if (isAuthenticated) {
             return "/blog/addpost";
         } else {
             return "/blog";
         }
-    }
+    }, [isAuthenticated]);
 
     function setPopupState() {
+        ("rerendering");
         setShowPopup(true);
         setTimeout(() => {
             setShowPopup(false);
@@ -61,6 +61,7 @@ const BlogPosts = ({ postData, isAuthenticated }) => {
                                 {post.blogPost}
                             </div>
                             <p className="read-more">Read more...</p>
+
                             <p className="post-info">
                                 {moment(post.date).fromNow()} -{" "}
                                 {Math.ceil(post.blogPost.length / 250)} minutes

@@ -2,10 +2,18 @@ import React from "react";
 import "./games-overview.styles.scss";
 import { Link } from "react-router-dom";
 import Layout from "../../layout/layout/layout.component";
+import { motion } from "framer-motion";
+import { pageTransition } from "../../../Utilities/Transitions/Transitions";
 
 const GamesOverview = () => {
     return (
-        <div className="games-wrapper">
+        <motion.div
+            className="games-wrapper"
+            exit="out"
+            animate="in"
+            initial="out"
+            variants={pageTransition}
+        >
             <Layout>
                 <div className="header-container">
                     <h2>Gaming Arcade - Enjoy my Games!</h2>
@@ -66,7 +74,7 @@ const GamesOverview = () => {
                     </div>
                 </div>
             </Layout>
-        </div>
+        </motion.div>
     );
 };
 

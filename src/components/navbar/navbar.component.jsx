@@ -39,8 +39,7 @@ const Navbar = (props) => {
             </div>
             {props.isAuthenticated ? (
                 <div className="signed-in-container">
-                    <p>{props.loggedInMessage}</p>
-                    <SignoutButton />
+                    <SignoutButton user={props.loggedInMessage.split(" ", 1)} />
                 </div>
             ) : null}
 

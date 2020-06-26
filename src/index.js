@@ -9,6 +9,8 @@ import { store } from "./redux/store";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
+    faSignOutAlt,
+    faCaretDown,
     faCheckSquare,
     faUser,
     faPhone,
@@ -25,6 +27,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
+    faSignOutAlt,
+    faCaretDown,
     fab,
     faCheckSquare,
     faUser,

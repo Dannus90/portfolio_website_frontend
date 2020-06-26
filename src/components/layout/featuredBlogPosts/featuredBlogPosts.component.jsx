@@ -8,7 +8,7 @@ const FeaturedBlogPosts = () => {
     const [postData, setPostData] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/addBlogPost").then((res) => {
+        axios.get(`${process.env.REACT_APP_API_URL}/BlogPosts`).then((res) => {
             setPostData(res.data);
         });
     }, []);
