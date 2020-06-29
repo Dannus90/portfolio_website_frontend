@@ -3,8 +3,7 @@
     display: inline-block;
     color: #fff;
     position: relative;
-    padding: 0 5rem;
-    padding-top: 20rem;
+    padding: 20rem 5rem 0rem 5rem;
     line-height: 2.2rem;
     text-align: center;
 }
@@ -23,5 +22,61 @@
 
     100% {
         opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .dynamic-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .dynamic-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .dynamic-text {
+        font-size: 0.85rem;
+        padding: 20rem 12rem 0rem 12rem;
+    }
+}
+
+@media only screen and (max-width: 705px) {
+    .dynamic-text {
+        padding: 20rem 11rem 0rem 11rem;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+    .dynamic-text {
+        font-size: 0.8rem;
+        padding: 20rem 10.5rem 0rem 10.5rem;
+    }
+}
+@media only screen and (max-width: 643px) {
+    .dynamic-text {
+        font-size: 0.75rem;
+        padding: 20rem 10rem 0rem 10rem;
+    }
+}
+
+@media only screen and (max-width: 610px) {
+    .dynamic-text {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 597px) {
+    .dynamic-text {
+        font-size: 0.7rem;
+        padding: 20rem 9.5rem 0rem 9.5rem;
+    }
+}
+@media only screen and (max-width: 582px) {
+    .dynamic-text {
+        display: none;
     }
 }

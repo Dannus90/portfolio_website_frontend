@@ -1,54 +1,57 @@
 .footer-container {
     background-color: #f1f1f1;
     display: flex;
-    flex-direction: column;
-
-    .logo-link-container {
-        display: flex;
-        flex-direction: rows;
-        justify-content: space-between;
-    }
+    flex-direction: rows;
+    height: 300px;
 
     &-logo {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5rem;
+
         .main-logo-footer {
-            padding: 3rem 0 1rem 0;
-            margin-left: 6rem;
+            padding: 2.5rem 0 1rem 0;
+
             width: 250px;
             color: #2c2828;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
     }
 
     &-links {
+        flex: 1;
         text-align: center;
-        padding: 3rem 7rem 1rem 0px;
+        margin-bottom: 5rem;
+
+        margin-top: 0.7rem;
         display: flex;
-        flex-direction: rows;
         justify-content: center;
         align-items: center;
     }
 
     &-copyright {
         display: flex;
+        flex: 1;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
+        margin-bottom: 5rem;
         .footer-copyright-text {
             border-top: 1px solid #000;
-            width: 35%;
+            width: 100%;
             color: #2c2828;
             font-weight: 700;
             font-size: 1rem;
             text-align: right;
             margin-top: 1rem;
-            padding: 1rem 0 4rem 0;
+
             text-align: center;
         }
     }
 }
 
 .iconMod-footer {
+    flex: 1;
     color: #2c2828;
     transition: all 0.2s ease-out;
     display: flex;
@@ -57,5 +60,20 @@
 
     &:hover {
         color: #c53030;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .blog-wrapper {
+        .main-background-blog {
+            a {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+                padding: 1rem 0;
+            }
+        }
     }
 }

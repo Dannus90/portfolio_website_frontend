@@ -1,7 +1,4 @@
 .login-button-container {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    border-radius: 1.2rem;
     .login-button {
         color: #fff;
 
@@ -10,6 +7,8 @@
         padding: 0.2rem 0.8rem;
         border-radius: 1.2rem;
         display: inline-block;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
         font-size: 1rem;
         transition: all 0.5s ease-out;
@@ -17,6 +16,38 @@
 
         &:hover {
             transform: scale(1.05);
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .login-button-container {
+        position: absolute;
+        top: 6.6rem;
+        left: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .login-button-container {
+        top: 6rem;
+        left: 1.5rem;
+        .login-button {
+            padding: 0.2rem 0.7rem;
+
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .login-button-container {
+        top: 5.5rem;
+        left: 2rem;
+        .login-button {
+            padding: 0.1rem 0.6rem;
+
+            font-size: 0.8rem;
         }
     }
 }

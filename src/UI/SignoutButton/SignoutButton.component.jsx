@@ -22,7 +22,8 @@ const SignoutButton = (props) => {
                             className="signout-button-user-avatar-icon"
                         />
                     </div>{" "}
-                    {props.user} <FontAwesomeIcon icon="caret-down" />
+                    <div className="user-text">{props.user}</div>
+                    <FontAwesomeIcon icon="caret-down" />
                 </div>
             </div>
             {showSignOut && (

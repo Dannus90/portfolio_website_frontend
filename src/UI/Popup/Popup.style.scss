@@ -97,3 +97,37 @@
         background-color: #0e0d26;
     }
 }
+
+@media only screen and (max-width: 900px) {
+    .popup {
+        height: 55px;
+        width: 55px;
+    }
+
+    .ul-container {
+        ul {
+            li {
+                .ul-container__link {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .popup {
+        height: 50px;
+        width: 50px;
+    }
+
+    .ul-container {
+        ul {
+            li {
+                .ul-container__link {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}

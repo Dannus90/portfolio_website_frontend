@@ -15,6 +15,11 @@
             font-size: 1rem;
             cursor: pointer;
 
+            .user-text {
+                display: inline-block;
+                margin-right: 0.4rem;
+            }
+
             &:hover {
                 transform: scale(1.05);
             }
@@ -56,5 +61,66 @@
             margin: 0;
             font-size: 0.9rem;
         }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .signout-wrapper {
+        position: absolute;
+        top: 3.3rem;
+        left: 0rem;
+        .signout-button-container {
+            .signout-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .signout-button-user-avatar {
+                    &-icon {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .signout-wrapper {
+        top: 3rem;
+
+        .signout-button-container {
+            .signout-button {
+                font-size: 0.9rem;
+
+                .signout-button-user-avatar {
+                    &-icon {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        .dropdown-signout {
+            width: 95%;
+            padding: 1rem 0rem;
+            left: 0.2rem;
+
+            .signout-icon {
+                margin-right: 0.3rem;
+            }
+
+            .signout-paragraph {
+                color: #000;
+                margin: 0;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .signout-wrapper {
+        top: 2.4rem;
     }
 }
