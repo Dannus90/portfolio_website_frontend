@@ -3,15 +3,39 @@
     text-align: center;
     width: 70%;
     transform: translate(-50%, -50%);
-    bottom: -10%;
+    top: 111%;
     left: 50%;
     background-color: rgba($color: #000000, $alpha: 0.75);
     z-index: 1000;
+    padding: 0.5rem 0rem;
 
     p {
         color: #fff;
         margin: 0;
         padding: 1rem 2rem;
         font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 84.375rem) {
+    .modal-wrapper-fail {
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+@media only screen and (max-width: 78.125rem) {
+    .modal-wrapper-fail {
+        p {
+            font-size: 0.85rem;
+        }
+    }
+}
+@media only screen and (max-width: 71.875rem) {
+    .modal-wrapper-fail {
+        top: 138.5%;
+        p {
+            font-size: 0.85rem;
+        }
     }
 }

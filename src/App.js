@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import HomePage from "./components/pages/homePage/homepage.component";
 import GamesOverview from "../src/components/pages/gamesOverview/games-overview.component";
+import "./App.styles.scss";
 
 import SinglePostPage from "./components/pages/singlePostPage/singlePost.component";
 import SpinnerBig from "./UI/SpinnerBig/spinnerBig.component";
@@ -39,7 +40,7 @@ function App(props) {
             <AnimatePresence>
                 <Suspense
                     fallback={
-                        <div>
+                        <div className="App-center-spinner">
                             <SpinnerBig />
                         </div>
                     }

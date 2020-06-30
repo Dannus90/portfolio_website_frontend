@@ -205,7 +205,19 @@ const Contact = () => {
         } else {
             setIsLoading(false);
             setShowModal(true);
-            setModalMessage("Please fill out the form correctly!");
+
+            if (
+                validationState.firstNameValidated === true &&
+                validationState.lastNameValidated === true &&
+                validationState.emailValidated === true &&
+                validationState.messageValidated === false
+            ) {
+                setModalMessage(
+                    "Please enter a message between 50-200 characters"
+                );
+            } else {
+                setModalMessage("Please fill out the form correctly");
+            }
             setTimeout(() => {
                 setShowModal(false);
             }, 2000);
@@ -268,18 +280,14 @@ const Contact = () => {
                                         "firstName"
                                     );
                                 }}
+                                style={
+                                    state.firstName === ""
+                                        ? { borderBottom: "none" }
+                                        : validationState.firstNameValidated
+                                        ? { borderBottom: "2px solid green" }
+                                        : null
+                                }
                             />
-                            {validationState.firstNameValidated ? (
-                                <FontAwesomeIcon
-                                    icon="check"
-                                    className="input-icon-check"
-                                />
-                            ) : (
-                                <FontAwesomeIcon
-                                    icon="times"
-                                    className="input-icon-times"
-                                />
-                            )}
                         </div>
                     </div>
 
@@ -301,18 +309,14 @@ const Contact = () => {
                                         "lastName"
                                     )
                                 }
+                                style={
+                                    state.lastName === ""
+                                        ? { borderBottom: "none" }
+                                        : validationState.lastNameValidated
+                                        ? { borderBottom: "2px solid green" }
+                                        : null
+                                }
                             />
-                            {validationState.lastNameValidated ? (
-                                <FontAwesomeIcon
-                                    icon="check"
-                                    className="input-icon-check"
-                                />
-                            ) : (
-                                <FontAwesomeIcon
-                                    icon="times"
-                                    className="input-icon-times"
-                                />
-                            )}
                         </div>
                     </div>
                     <div className="form-container-content">
@@ -330,18 +334,14 @@ const Contact = () => {
                                 onChange={(e) =>
                                     inputValidityCheck(e.target.value, "email")
                                 }
+                                style={
+                                    state.email === ""
+                                        ? { borderBottom: "none" }
+                                        : validationState.emailValidated
+                                        ? { borderBottom: "2px solid green" }
+                                        : { borderBottom: "2px solid red" }
+                                }
                             />
-                            {validationState.emailValidated ? (
-                                <FontAwesomeIcon
-                                    icon="check"
-                                    className="input-icon-check"
-                                />
-                            ) : (
-                                <FontAwesomeIcon
-                                    icon="times"
-                                    className="input-icon-times"
-                                />
-                            )}
                         </div>
                     </div>
                     <div className="form-container-content">
@@ -356,10 +356,6 @@ const Contact = () => {
                                 onChange={(e) =>
                                     inputValidityCheck(e.target.value, "phone")
                                 }
-                            />
-                            <FontAwesomeIcon
-                                icon="check"
-                                className="input-icon-check"
                             />
                         </div>
                     </div>
@@ -380,18 +376,14 @@ const Contact = () => {
                                         "message"
                                     )
                                 }
+                                style={
+                                    state.message === ""
+                                        ? { borderBottom: "none" }
+                                        : validationState.messageValidated
+                                        ? { borderBottom: "2px solid green" }
+                                        : { borderBottom: "2px solid red" }
+                                }
                             />
-                            {validationState.messageValidated ? (
-                                <FontAwesomeIcon
-                                    icon="check"
-                                    className="input-icon-check-message"
-                                />
-                            ) : (
-                                <FontAwesomeIcon
-                                    icon="times"
-                                    className="input-icon-times-message"
-                                />
-                            )}
                         </div>
                     </div>
                     {!isLoading ? (

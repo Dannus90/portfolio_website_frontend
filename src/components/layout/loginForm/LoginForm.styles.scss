@@ -96,7 +96,7 @@
             cursor: pointer;
         }
     }
-    .register-link {
+    .login-link {
         text-align: center;
         font-size: 0.8rem;
         color: #42474d;
@@ -120,6 +120,47 @@
             color: #f56565;
             font-size: 0.8rem;
             line-height: 0.8rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 65.625rem) {
+    .login-form-container {
+        width: 26rem;
+        padding: 3rem 4.5rem;
+
+        .login-form {
+            .login-submit-button {
+                width: 45%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 50rem) {
+    .login-form-container {
+        width: 24rem;
+        padding: 2.5rem 4rem;
+
+        .login-form {
+            .login-input {
+                padding: 0.4rem 0.8rem;
+            }
+
+            .login-submit-button {
+                width: 45%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 46.875rem) {
+    .login-form-container {
+        width: 22rem;
+        padding: 2rem 3.5rem;
+
+        h2 {
+            font-size: 1.3rem;
         }
     }
 }

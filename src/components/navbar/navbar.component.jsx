@@ -12,11 +12,6 @@ import { Link } from "react-router-dom";
 import { removePopup } from "../../redux/navigation/navigation.actions";
 
 const Navbar = (props) => {
-    // Removing Login and Register from navbar if you visit these routes'
-    // console.log("Hello", props.isAuthenticated);
-    // console.log("expiresAt", props.expiresAt);
-    // console.log(new Date().getTime() / 1000);
-
     const patternLogin = /login$/;
     const patternRegister = /register$/;
 

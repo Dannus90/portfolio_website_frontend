@@ -189,7 +189,7 @@ const LoginForm = (props) => {
             </form>
             <p>Forgot password?</p>
             <Link to="/register" className="register-link">
-                No account yet?
+                <p>No account yet?</p>
             </Link>
         </div>
     );

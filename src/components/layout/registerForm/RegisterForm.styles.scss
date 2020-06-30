@@ -126,3 +126,102 @@
         padding: 0.1rem 6rem;
     }
 }
+
+@media only screen and (max-width: 71.875rem) {
+    .register-form-container {
+        width: 37.5rem;
+
+        .register-form {
+            .login-input {
+                padding: 0.4rem 1rem;
+            }
+
+            .register-submit-button {
+                width: 45%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 62.5rem) {
+    .register-form-container {
+        width: 32.5rem;
+
+        .register-form {
+            .login-input {
+                padding: 0.4rem 0.8rem;
+            }
+
+            .register-submit-button {
+                width: 45%;
+            }
+        }
+        .password-container {
+            .single-password-input-container {
+                width: 47.5%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 53.125rem) {
+    .register-form-container {
+        width: 30rem;
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        .register-form {
+            .login-input {
+                padding: 0.4rem 0.8rem;
+            }
+
+            .register-submit-button {
+                width: 45%;
+                font-size: 1.1rem;
+            }
+        }
+        .password-container {
+            .single-password-input-container {
+                width: 47.5%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 46.875rem) {
+    .register-form-container {
+        width: 27.5rem;
+        padding: 3rem 3.5rem;
+
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        .register-form {
+            .login-input {
+                padding: 0.4rem 0.8rem;
+            }
+        }
+        .password-container {
+            .single-password-input-container {
+                width: 47.5%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 37.5rem) {
+    .register-form-container {
+        width: 25rem;
+        padding: 2.5rem 3rem;
+    }
+}
+
+@media only screen and (max-width: 34.375rem) {
+    .register-form-container {
+        width: 23rem;
+        padding: 2rem 2.5rem;
+    }
+}

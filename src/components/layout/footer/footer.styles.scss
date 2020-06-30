@@ -44,7 +44,7 @@
             font-size: 1rem;
             text-align: right;
             margin-top: 1rem;
-
+            padding-top: 1rem;
             text-align: center;
         }
     }
@@ -63,17 +63,37 @@
     }
 }
 
-@media only screen and (max-width: 730px) {
-    .blog-wrapper {
-        .main-background-blog {
-            a {
-                font-size: 1.4rem;
-            }
+@media only screen and (max-width: 65.625rem) {
+    .footer-container {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 250px;
+        position: relative;
 
-            h2 {
-                font-size: 2.2rem;
-                padding: 1rem 0;
+        &-logo {
+            display: none;
+        }
+
+        &-links {
+            flex: none;
+            margin-bottom: 0rem;
+            margin-top: 0rem;
+        }
+
+        &-copyright {
+            flex: none;
+
+            align-items: center;
+            margin-bottom: 0.2rem;
+            .footer-copyright-text {
+                padding-top: 0.5rem;
             }
         }
+    }
+
+    .iconMod-footer {
+        margin-right: 15px;
+        margin-left: 15px;
     }
 }
