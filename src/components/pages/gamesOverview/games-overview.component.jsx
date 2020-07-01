@@ -49,10 +49,15 @@ const GamesOverview = () => {
                     </div>
 
                     <div className="games-grid-container__grid-item">
-                        <Link to="/gamesoverview/tetris" className="link-style">
-                            <p>Tetris!</p>
-                            <div className="grid__item--tetris"></div>
-                        </Link>
+                        <a
+                            href="https://gallant-curran-8388b8.netlify.app/"
+                            className="link-style"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <p>Speed-Typer</p>
+                            <div className="grid__item--speedTyper"></div>
+                        </a>
                     </div>
                     <div className="games-grid-container__grid-item">
                         <Link to="/gamesoverview/tetris" className="link-style">

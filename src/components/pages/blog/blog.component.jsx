@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../layout/layout/layout.component";
 import Pagination from "../../../UI/Pagination/pagination.component";
-import SpinnerBig from "../../../UI/SpinnerBig/spinnerBig.component";
 import BlogPosts from "../../layout/blogPosts/blogPosts.component";
 import FeaturedBlogPosts from "../../layout/featuredBlogPosts/featuredBlogPosts.component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -39,11 +38,6 @@ const Blog = () => {
             initial="out"
             variants={pageTransition}
         >
-            {loading ? (
-                <div className="spinner-container">
-                    <SpinnerBig />
-                </div>
-            ) : null}
             {posts !== [] ? (
                 <div className="blog-wrapper">
                     <Layout>
