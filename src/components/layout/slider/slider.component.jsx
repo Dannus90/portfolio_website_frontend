@@ -80,7 +80,7 @@ const Slider = () => {
                         onClick={() => prevTestimonial()}
                         disabled={property.index === 0}
                     >
-                        &larr;
+                        <span>&larr;</span>
                     </button>
                     <h2>Technologies I have been working with</h2>
 
