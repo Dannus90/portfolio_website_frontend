@@ -145,7 +145,7 @@
         }
 
         .form-input {
-            padding: 0.4rem 3rem 0.4rem 0.5rem;
+            padding: 0.4rem 0.5rem 0.4rem 0.5rem;
             font-family: "Roboto", sans-serif;
             width: 65%;
             font-size: 1rem;
@@ -418,16 +418,20 @@
 
         .form-side {
             padding: 1rem;
-
-            .contact-info-container {
-                &:nth-child(2) {
-                    padding: 0.2rem 0;
-                }
-            }
         }
 
         .form-container-content {
             width: 25rem;
+        }
+        .form-side {
+            padding: 1rem;
+
+            .contact-info-container {
+                font-size: 0.8rem;
+                &:nth-child(2) {
+                    padding: 0.2rem 0;
+                }
+            }
         }
     }
 }
@@ -447,8 +451,9 @@
             padding: 1rem;
 
             .contact-info-container {
+                font-size: 0.75rem;
                 &:nth-child(2) {
-                    padding: 0.2rem 0;
+                    padding: 0.15rem 0;
                 }
             }
         }
@@ -456,15 +461,64 @@
         .form-container-content {
             width: 22.5rem;
         }
+        .form-submit-button {
+            padding: 0.7rem 3.4rem;
+        }
     }
 }
 
 @media only screen and (max-width: 42.1875rem) {
-    .form-side {
-        padding: 1rem;
+    .form-section {
+        padding: 0rem 1rem 5rem 1rem;
 
         .form-container-content {
             width: 20rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 37.5rem) {
+    .form-section {
+        h2 {
+            font-size: 1.6rem;
+            padding: 3rem 0;
+        }
+        .form-side {
+            padding: 1rem;
+        }
+        .form-container-content {
+            width: 20rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 32.5rem) {
+    .form-section {
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        .form-container-content {
+            width: 16rem;
+            .form-input {
+                width: 90%;
+            }
+
+            .message-input {
+                width: 90%;
+            }
+
+            label {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 27.5rem) {
+    .form-section {
+        .form-container-content {
+            width: 14rem;
         }
     }
 }
