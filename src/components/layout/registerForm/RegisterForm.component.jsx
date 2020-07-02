@@ -98,7 +98,7 @@ const RegisterForm = (props) => {
 
             axios
                 .post(
-                    `${process.env.REACT_APP_API_URL}/user/register`,
+                    `${process.env.REACT_APP_API_URL}/api/user/register`,
                     dataToSubmit
                 )
                 .then((res) => {

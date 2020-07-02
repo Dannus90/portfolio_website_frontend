@@ -183,7 +183,10 @@ const Contact = () => {
             console.log(process.env.REACT_APP_API_URL);
 
             axios
-                .post(`${process.env.REACT_APP_API_URL}/sendMail`, dataToSubmit)
+                .post(
+                    `${process.env.REACT_APP_API_URL}/api/sendMail`,
+                    dataToSubmit
+                )
                 .then((res) => {
                     setIsLoading(false);
                     setShowModal(true);

@@ -82,7 +82,7 @@ const AddNewPostPage = () => {
 
             axios
                 .post(
-                    `${process.env.REACT_APP_API_URL}/BlogPosts`,
+                    `${process.env.REACT_APP_API_URL}/api/BlogPosts`,
                     dataToSubmit
                 )
                 .then((res) => {
