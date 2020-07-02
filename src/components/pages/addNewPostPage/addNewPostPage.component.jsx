@@ -71,7 +71,6 @@ const AddNewPostPage = () => {
         setLoading(true);
 
         if (validateInput(author, title, category, blogPost, image)) {
-            console.log("reached here!");
             let dataToSubmit = {
                 title: title,
                 author: author,

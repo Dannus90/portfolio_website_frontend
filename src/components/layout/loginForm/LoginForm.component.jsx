@@ -58,8 +58,6 @@ const LoginForm = (props) => {
                 password: password,
             };
 
-            console.log(process.env.REACT_APP_API_URL);
-
             axios
                 .post(
                     `${process.env.REACT_APP_API_URL}/user/login`,

@@ -180,8 +180,10 @@ const Contact = () => {
                 message: state.message,
             };
 
+            console.log(process.env.REACT_APP_API_URL);
+
             axios
-                .post("http://localhost:5000/api/sendMail", dataToSubmit)
+                .post(`${process.env.REACT_APP_API_URL}/sendMail`, dataToSubmit)
                 .then((res) => {
                     setIsLoading(false);
                     setShowModal(true);
