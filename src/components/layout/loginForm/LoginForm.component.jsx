@@ -60,7 +60,7 @@ const LoginForm = (props) => {
 
             axios
                 .post(
-                    `${process.env.REACT_APP_API_URL}api/user/login`,
+                    `${process.env.REACT_APP_API_URL}/api/user/login`,
                     dataToSubmit
                 )
                 .then((res) => {
