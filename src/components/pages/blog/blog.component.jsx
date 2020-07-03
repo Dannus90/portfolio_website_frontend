@@ -17,10 +17,12 @@ const Blog = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`${process.env.REACT_APP_API_URL}/BlogPosts`).then((res) => {
-            setPosts(res.data);
-            setLoading(false);
-        });
+        axios
+            .get(`${process.env.REACT_APP_API_URL}/api/BlogPosts`)
+            .then((res) => {
+                setPosts(res.data);
+                setLoading(false);
+            });
     }, []);
 
     //Get current post

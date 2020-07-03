@@ -8,9 +8,11 @@ const FeaturedBlogPosts = () => {
     const [postData, setPostData] = useState("");
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/BlogPosts`).then((res) => {
-            setPostData(res.data);
-        });
+        axios
+            .get(`${process.env.REACT_APP_API_URL}/api/BlogPosts`)
+            .then((res) => {
+                setPostData(res.data);
+            });
     }, []);
 
     const featuredPostData = [
