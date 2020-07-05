@@ -274,14 +274,14 @@
         .btn-left {
             position: absolute;
             bottom: 10%;
-            left: 20%;
+            left: 5rem;
             z-index: 1000;
         }
 
         .btn-right {
             position: absolute;
             bottom: 10%;
-            left: 56%;
+            right: 5rem;
             z-index: 1000;
         }
 
@@ -298,15 +298,11 @@
 @media only screen and (max-width: 26.5rem) {
     .slider-page-wrapper {
         .btn-left {
-            position: absolute;
             bottom: 15%;
-            left: 22%;
         }
 
         .btn-right {
-            position: absolute;
             bottom: 15%;
-            left: 50%;
         }
 
         .slider-container {
@@ -320,11 +316,11 @@
 @media only screen and (max-width: 23.5rem) {
     .slider-page-wrapper {
         .btn-left {
-            left: 18%;
+            left: 4rem;
         }
 
         .btn-right {
-            left: 50%;
+            right: 4rem;
         }
 
         .slider-container {
@@ -339,12 +335,10 @@
     .slider-page-wrapper {
         .btn-left {
             bottom: 20%;
-            left: 18%;
         }
 
         .btn-right {
             bottom: 20%;
-            left: 50%;
         }
 
         .slider-container {

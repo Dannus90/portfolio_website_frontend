@@ -9,10 +9,10 @@ import { Link } from "react-router-dom";
 const NavbarSingleBlogPost = (props) => {
     return (
         <div
-            className="navbar-container"
+            className="navbar-singlePost-container"
             style={props.show ? { position: "fixed" } : null}
         >
-            <div className="navbar-container__logo-container">
+            <div className="navbar-singlePost-container__logo-container">
                 <Link to="/">
                     <img src={Logo} alt="Logo" className="main-logo" />
                 </Link>
