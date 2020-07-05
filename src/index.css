@@ -17,6 +17,6 @@ body {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     letter-spacing: 2px;
-    line-height: 30px;
+    line-height: 1.875rem;
     overflow-x: hidden;
 }
