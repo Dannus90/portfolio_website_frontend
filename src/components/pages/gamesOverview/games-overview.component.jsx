@@ -17,10 +17,7 @@ const GamesOverview = () => {
             <Layout>
                 <div className="header-container">
                     <h2>Gaming Arcade - Enjoy my Games!</h2>
-                    <p>
-                        Made in Vanilla Javascript - Only working on computer
-                        fully!
-                    </p>
+                    <p>Made in Vanilla Javascript or React!</p>
                 </div>
 
                 <div className="games-grid-container">

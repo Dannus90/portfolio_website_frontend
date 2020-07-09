@@ -110,6 +110,35 @@ const data = {
             picture:
                 "https://www.agero.se/hs-fs/hubfs/Redux.png?width=228&name=Redux.png",
         },
+        {
+            _id: "1012",
+            index: 11,
+            name: "REACT NATIVE",
+            text:
+                "I have started doing courses within mobile development and it goes pretty fast to learn because of all the similarities with React. I have done a couple of projects through courses and it is definately an area that I want to dig deeper into. ",
+
+            picture:
+                "https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png",
+        },
+        {
+            _id: "1013",
+            index: 12,
+            name: "WORDPRESS",
+            text:
+                "I have been freelancing, doing work for clients in Wordpress, either building websites from scratch or improving already existing websites.",
+
+            picture:
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Wordpress-Logo.svg/1024px-Wordpress-Logo.svg.png",
+        },
+        {
+            _id: "1014",
+            index: 13,
+            name: "SHOPIFY",
+            text:
+                "I have been doing work on fiverr, helping clients improve the layout and functionality of their shopify stores.",
+            picture:
+                "https://pbs.twimg.com/profile_images/823482409807183872/owdZw8pP_400x400.jpg",
+        },
     ],
 };
 

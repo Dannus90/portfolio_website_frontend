@@ -1,9 +1,29 @@
 // active card opacity scss loop
 $i: 0;
-@for $i from 0 through 10 {
+@for $i from 0 through 13 {
     .cards-slider.active-slide-#{$i} #card-#{$i} {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+#card-7 {
+    img {
+        object-fit: contain;
+    }
+}
+
+// REACT NATIVE!
+#card-11 {
+    img {
+        object-fit: contain;
+    }
+}
+
+// SHOPIFY
+#card-13 {
+    img {
+        object-fit: contain;
     }
 }
 
@@ -70,7 +90,7 @@ $i: 0;
             background-color: #febe3e;
             padding: 0rem 0.4rem;
             font-weight: bold;
-            font-size: 1.03rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease-in-out;
 
             &:hover {

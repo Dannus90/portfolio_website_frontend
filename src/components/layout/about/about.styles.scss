@@ -281,7 +281,7 @@
         height: 15rem;
         .about-image-small-screen {
             width: 150%;
-
+            height: 75%;
             margin-top: 0.5rem;
         }
 
@@ -309,12 +309,12 @@
 
 @media screen and (max-width: 550px) {
     .about-image-small-screen {
-        width: 175% !important;
+        width: 180% !important;
     }
 }
 
 @media screen and (max-width: 450px) {
     .about-image-small-screen {
-        width: 200% !important;
+        width: 210% !important;
     }
 }

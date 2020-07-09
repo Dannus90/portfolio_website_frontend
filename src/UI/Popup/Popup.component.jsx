@@ -60,7 +60,7 @@ const Popup = (props) => {
                 className="ul-container__link"
                 onClick={() => props.toggleNavigationMenu()}
             >
-                Blog
+                Example Blog
             </Link>
         </li>
     ) : null;

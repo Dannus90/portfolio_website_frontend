@@ -2,7 +2,7 @@ import React from "react";
 import "./center-nav.style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
-import ProfileImage from "../../assets/profile/profile.png";
+import ProfileImage from "../../assets/profile/profile.jpg";
 
 const CenterNav = (props) => {
     return (

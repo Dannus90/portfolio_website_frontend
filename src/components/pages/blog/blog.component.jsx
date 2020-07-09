@@ -45,7 +45,7 @@ const Blog = () => {
                     <Layout>
                         <div className="main-background-blog">
                             <div className="main-background-blog__overlay" />
-                            <h2>My Blog</h2>
+                            <h2>Example Blog</h2>
                             <a href="#featuredBlogPosts-header">
                                 <FontAwesomeIcon icon="chevron-down" />
                             </a>

@@ -5,8 +5,23 @@ import Card from "../../../UI/Card/card.component";
 
 const Slider = () => {
     const properties = data.properties;
-    const [property, setProperty] = useState(data.properties[0]);
+    const [property, setProperty] = useState(data.properties[2]);
     const [isRunning, setIsRunning] = useState(true);
+
+    console.log(property.index);
+
+    // //Trying to solve sliding cards
+    // useEffect(() => {
+    //     if (property.index === data.properties.length - 2) {
+    //         data.properties.push(data.properties[0]);
+    //         data.properties.shift();
+    //         data.properties.forEach((property) => {
+    //             property.index = property.index - 1;
+    //         });
+    //         data.properties[data.properties.length - 1].index =
+    //             data.properties.length;
+    //     }
+    // }, [property.index]);
 
     function useInterval(callback, delay) {
         const savedCallback = useRef();
@@ -52,7 +67,7 @@ const Slider = () => {
         }
         setTimeout(() => {
             setIsRunning(true);
-        }, 6000);
+        }, 2000);
         return;
     };
 
@@ -67,7 +82,7 @@ const Slider = () => {
         }
         setTimeout(() => {
             setIsRunning(true);
-        }, 6000);
+        }, 2000);
         return;
     };
 
