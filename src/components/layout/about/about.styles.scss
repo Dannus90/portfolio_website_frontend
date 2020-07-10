@@ -115,7 +115,9 @@
                     object-fit: cover;
                     object-position: center;
                     height: 80%;
+
                     width: 80%;
+
                     display: block;
                     position: relative;
                 }
@@ -316,5 +318,173 @@
 @media screen and (max-width: 450px) {
     .about-image-small-screen {
         width: 210% !important;
+    }
+}
+
+@media screen and (min-width: 2050px) {
+    .about-content-container {
+        //About me section-2
+
+        .about-me-section-2 {
+            .about-grid-item-1 {
+                .overlapping-image-container {
+                    .image-shadow {
+                        top: 3rem;
+                        height: 75%;
+                        width: 75%;
+                    }
+
+                    .about-image {
+                        top: 3rem;
+                        height: 75%;
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2250px) {
+    .about-content-container {
+        //About me section-2
+
+        .about-me-section-2 {
+            .about-grid-item-1 {
+                .overlapping-image-container {
+                    .image-shadow {
+                        top: 5rem;
+                        height: 70%;
+                        width: 70%;
+                    }
+
+                    .about-image {
+                        top: 5rem;
+                        height: 70%;
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2450px) {
+    .about-content-container {
+        //About me section-2
+
+        .about-me-section-2 {
+            .about-grid-item-1 {
+                .overlapping-image-container {
+                    .image-shadow {
+                        top: 7rem;
+                        height: 65%;
+                        width: 65%;
+                    }
+
+                    .about-image {
+                        top: 7rem;
+                        height: 65%;
+                        width: 65%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2650px) {
+    .about-content-container {
+        //About me section-2
+
+        .about-me-section-2 {
+            .about-grid-item-1 {
+                .overlapping-image-container {
+                    .image-shadow {
+                        top: 9rem;
+                        height: 60%;
+                        width: 60%;
+                    }
+
+                    .about-image {
+                        top: 9rem;
+                        height: 60%;
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2850px) {
+    .about-content-container {
+        //About me section-2
+
+        .about-me-section-2 {
+            .about-grid-item-1 {
+                .overlapping-image-container {
+                    .image-shadow {
+                        top: 11rem;
+                        height: 55%;
+                        width: 55%;
+                    }
+
+                    .about-image {
+                        top: 11rem;
+                        height: 55%;
+                        width: 55%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2850px) {
+    .about-content-container {
+        //About me section-2
+
+        .about-me-section-2 {
+            .about-grid-item-1 {
+                .overlapping-image-container {
+                    .image-shadow {
+                        top: 13rem;
+                        height: 50%;
+                        width: 50%;
+                    }
+
+                    .about-image {
+                        top: 13rem;
+                        height: 50%;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2850px) {
+    .about-content-container {
+        //About me section-2
+
+        .about-me-section-2 {
+            .about-grid-item-1 {
+                .overlapping-image-container {
+                    .image-shadow {
+                        top: 15rem;
+                        height: 45%;
+                        width: 45%;
+                    }
+
+                    .about-image {
+                        top: 15rem;
+                        height: 45%;
+                        width: 45%;
+                    }
+                }
+            }
+        }
     }
 }

@@ -69,7 +69,7 @@ const Popup = (props) => {
         <div className="wrapper">
             <div
                 className="popup"
-                style={props.show ? { transform: "scale(80)" } : null}
+                style={props.show ? { transform: "scale(120)" } : null}
             ></div>
             <div
                 className="ul-container"
