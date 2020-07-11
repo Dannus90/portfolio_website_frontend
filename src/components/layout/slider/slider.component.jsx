@@ -8,8 +8,6 @@ const Slider = () => {
     const [property, setProperty] = useState(data.properties[2]);
     const [isRunning, setIsRunning] = useState(true);
 
-    console.log(property.index);
-
     // //Trying to solve sliding cards
     // useEffect(() => {
     //     if (property.index === data.properties.length - 2) {
