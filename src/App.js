@@ -2,11 +2,11 @@ import React, { lazy, Suspense } from "react";
 import HomePage from "./components/pages/homePage/homepage.component";
 import GamesOverview from "../src/components/pages/gamesOverview/games-overview.component";
 import "./App.styles.scss";
-
 import SinglePostPage from "./components/pages/singlePostPage/singlePost.component";
 import SpinnerBig from "./UI/SpinnerBig/spinnerBig.component";
 import RegisterPage from "./components/pages/registerPage/RegisterPage.component";
 import LoginPage from "./components/pages/loginPage/LoginPage.component";
+import ForgotPasswordPage from "./components/pages/forgotPasswordPage/forgotPasswordPage.component";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { AnimatePresence } from "framer-motion";
@@ -63,6 +63,11 @@ function App(props) {
                             component={RegisterPage}
                         />
                         <Route exact path="/login" component={LoginPage} />
+                        <Route
+                            exact
+                            path="/forgot"
+                            component={ForgotPasswordPage}
+                        />
                         <AuthenticatedBlogRoute exact path="/blog/addpost">
                             <AddNewPostPage />
                         </AuthenticatedBlogRoute>

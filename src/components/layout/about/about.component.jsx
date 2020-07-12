@@ -45,10 +45,10 @@ const About = () => {
                     <div className="about-grid-item-2">
                         <h3>Future goals</h3>
                         <p>
-                            At the moment I am doing own projects and taking a
-                            lot of courses on the internet. After the summer of
-                            2020 I will begin studies on the university and my
-                            goal is thereafter to land a job within the
+                            At the moment I am doing my own projects and taking
+                            a lot of courses on the internet. After the summer
+                            of 2020 I will begin studies on the university and
+                            my goal is thereafter to land a job within the
                             industry. I am of course interested in a part time
                             job or internship during my education.
                             <br />
@@ -64,7 +64,7 @@ const About = () => {
                                     contact information
                                 </span>
                             </a>{" "}
-                            are seen further down on the page.
+                            can be seen further down on the page.
                         </p>
                     </div>
                 </div>

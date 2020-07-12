@@ -225,3 +225,11 @@
         padding: 2rem 2.5rem;
     }
 }
+
+@media only screen and (max-width: 26rem) {
+    .register-form-container {
+        width: 21rem;
+        padding: 2rem 1.5rem;
+        margin-top: 12rem;
+    }
+}

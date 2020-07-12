@@ -185,8 +185,10 @@ const LoginForm = (props) => {
                     </div>
                 ) : null}
             </form>
-            <p>Forgot password?</p>
-            <Link to="/register" className="register-link">
+            <Link to="/forgot">
+                <p>Forgot password?</p>
+            </Link>
+            <Link to="/register">
                 <p>No account yet?</p>
             </Link>
         </div>
