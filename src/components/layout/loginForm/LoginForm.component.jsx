@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./LoginForm.styles.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { loginValidation } from "../../../Utilities/validation/loginValidation";
+import { emailValidation } from "../../../Utilities/validation/emailValidation";
 import SpinnerSmallDark from "../../../UI/SpinnerSmallDark/spinnerSmallDark.component";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
@@ -52,7 +52,7 @@ const LoginForm = (props) => {
         }
 
         setIsLoading(true);
-        if (loginValidation(email)) {
+        if (emailValidation(email)) {
             let dataToSubmit = {
                 email: email,
                 password: password,
@@ -64,7 +64,6 @@ const LoginForm = (props) => {
                     dataToSubmit
                 )
                 .then((res) => {
-                    console.log(res.data);
                     if (res.status === 200) {
                         props.signInHandler({
                             isAdmin: res.data.userInfo.isAdmin,
@@ -118,7 +117,10 @@ const LoginForm = (props) => {
                         errorMessage.charAt(0).toUpperCase() +
                         errorMessage.slice(1);
 
-                    setLoginErrorMessage(uppercaseFirstLetterMessage);
+                    setLoginErrorMessage(
+                        uppercaseFirstLetterMessage ||
+                            "Issue connecting to the server"
+                    );
                     setIsLoading(false);
                     setShowPopup(true);
                     setTimeout(() => {

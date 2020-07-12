@@ -140,7 +140,10 @@ const RegisterForm = (props) => {
                     }, 1000);
                 })
                 .catch((err) => {
-                    setRegisterMessage(err.request.responseText);
+                    setRegisterMessage(
+                        err.request.responseText ||
+                            "Issue connecting to the server"
+                    );
                     setShowPopup(true);
                     setIsLoading(false);
                     setTimeout(() => {

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Layout from "../../layout/layout/layout.component";
 import ForgotPasswordForm from "../../../components/layout/forgotPasswordForm/forgotPasswordForm.component";
 
-const LoginPage = (props) => {
+const ForgotPasswordPage = (props) => {
     return (
         <Layout>
             <div className="main-background-content">
@@ -24,4 +24,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(LoginPage);
+export default connect(mapStateToProps)(ForgotPasswordPage);

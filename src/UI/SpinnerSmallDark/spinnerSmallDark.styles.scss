@@ -12,6 +12,7 @@
     height: var(--sk-sizeSmallDark);
     position: relative;
     animation: sk-chase 2.5s infinite linear both;
+    margin-bottom: 1rem;
 
     .sk-chase-dot {
         width: 100%;
