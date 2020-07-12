@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { pageTransition } from "../../../Utilities/Transitions/Transitions";
+import SpinnerSmallLight from "../../../UI/SpinnerSmallLight/spinnerSmallLight.component";
 require("dotenv").config();
 
 const AddNewPostPage = () => {
@@ -132,9 +133,10 @@ const AddNewPostPage = () => {
                                 <p>* Denotes required field</p>
                             </div>
                             <div className="new-post-form-content-container">
-                                <label htmlFor="title">Title</label>
+                                <label htmlFor="title">
+                                    Title <span className="label-span">*</span>
+                                </label>
                                 <div className="input-container">
-                                    <span className="label-span">*</span>
                                     <input
                                         placeholder="Title"
                                         type="text"
@@ -146,9 +148,10 @@ const AddNewPostPage = () => {
                                         }}
                                     />
                                 </div>
-                                <label htmlFor="author">Author</label>
+                                <label htmlFor="author">
+                                    Author <span className="label-span">*</span>
+                                </label>
                                 <div className="input-container">
-                                    <span className="label-span">*</span>
                                     <input
                                         placeholder="Author"
                                         type="text"
@@ -161,12 +164,10 @@ const AddNewPostPage = () => {
                                     />
                                 </div>
                                 <label htmlFor="categories">
-                                    Choose a category:{" "}
+                                    Choose a category{" "}
+                                    <span className="label-span">*</span>
                                 </label>
                                 <div className="input-container">
-                                    <span className="label-span-drop-down">
-                                        *
-                                    </span>
                                     <select
                                         className="drop-down-list"
                                         name="categories"
@@ -180,11 +181,11 @@ const AddNewPostPage = () => {
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>
-                                <label htmlFor="textarea">Message</label>
+                                <label htmlFor="textarea">
+                                    Message{" "}
+                                    <span className="label-span">*</span>
+                                </label>
                                 <div className="input-container">
-                                    <span className="label-span-message">
-                                        *
-                                    </span>
                                     <textarea
                                         placeholder="Write your blog post here. Atleast 250 characters are required..."
                                         type="textarea"
@@ -196,23 +197,31 @@ const AddNewPostPage = () => {
                                         }}
                                     />
                                 </div>
-                                <div className="input-container">
-                                    <span className="label-span-upload">*</span>
+                                <div className="input-container upload-container">
                                     <label className="custom-file-upload">
                                         <input
                                             type="file"
                                             name="file"
                                             onChange={uploadImage}
                                         />
-                                        Upload an Image
+                                        <p className="image-upload-text">
+                                            Upload an Image{" "}
+                                            <span className="label-span-upload">
+                                                *
+                                            </span>
+                                        </p>
                                     </label>
                                 </div>
+
                                 {loading ? (
-                                    <h3>Loading...</h3>
+                                    <div className="spinner-style">
+                                        <SpinnerSmallLight />
+                                    </div>
                                 ) : (
                                     <img
                                         src={image}
                                         style={{ width: "300px" }}
+                                        className="image-style"
                                     />
                                 )}
 
