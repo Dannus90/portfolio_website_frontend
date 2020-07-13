@@ -27,8 +27,6 @@ const LoginForm = (props) => {
         }
     }, [email, password]);
 
-    console.log(props);
-
     const history = useHistory();
 
     const emailHandler = (e) => {

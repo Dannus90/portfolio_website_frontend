@@ -49,7 +49,7 @@ const ForgotPasswordForm = () => {
                     setTimeout(() => {
                         setShowSuccessPopup(true);
                         setSuccessMessage(
-                            "An email has been sent to you with a forgot link."
+                            "An email has been sent to you with a reset link."
                         );
                     }, 1000);
 
@@ -59,7 +59,6 @@ const ForgotPasswordForm = () => {
                     }, 4000);
                 })
                 .catch((err) => {
-                    console.log("got here!", err);
                     let errorMessage = err.request.responseText.replace(
                         /['"]+/g,
                         ""
@@ -92,7 +91,7 @@ const ForgotPasswordForm = () => {
 
     return (
         <div className="forgot-password-form-container">
-            <h2>forgot Password</h2>
+            <h2>Forgot Password?</h2>
             {showPopup ? (
                 <div className="popup-message">
                     <p className="popup-message-paragraph">
@@ -125,7 +124,7 @@ const ForgotPasswordForm = () => {
                 {!isLoading ? (
                     <input
                         type="submit"
-                        value="forgot Password"
+                        value="Send reset link"
                         className="forgot-password-button"
                     />
                 ) : null}
