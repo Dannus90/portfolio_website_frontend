@@ -4,9 +4,10 @@ import GamesOverview from "../src/components/pages/gamesOverview/games-overview.
 import "./App.styles.scss";
 import SinglePostPage from "./components/pages/singlePostPage/singlePost.component";
 import SpinnerBig from "./UI/SpinnerBig/spinnerBig.component";
-import RegisterPage from "./components/pages/registerPage/RegisterPage.component";
 import LoginPage from "./components/pages/loginPage/LoginPage.component";
+import RegisterPage from "./components/pages/registerPage/RegisterPage.component";
 import ForgotPasswordPage from "./components/pages/forgotPasswordPage/forgotPasswordPage.component";
+import ResetPasswordPage from "./components/pages/resetPasswordPage/resetPasswordPage.component";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { AnimatePresence } from "framer-motion";
@@ -68,6 +69,11 @@ function App(props) {
                             path="/forgot"
                             component={ForgotPasswordPage}
                         />
+                        <Route
+                            path="/reset/:id"
+                            component={ResetPasswordPage}
+                        />
+
                         <AuthenticatedBlogRoute exact path="/blog/addpost">
                             <AddNewPostPage />
                         </AuthenticatedBlogRoute>

@@ -9,7 +9,7 @@ const ForgotPasswordForm = () => {
     const [email, setEmail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [showEmailRequired, setShowEmailRequired] = useState(false);
-    const [resetErrorMessage, setResetErrorMessage] = useState("");
+    const [forgotErrorMessage, setForgotErrorMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);
     const [successMessage, setSuccessMessage] = useState("");
     const [showSuccessPopup, setShowSuccessPopup] = useState(false);
@@ -39,7 +39,7 @@ const ForgotPasswordForm = () => {
 
             axios
                 .post(
-                    `${process.env.REACT_APP_API_URL}/api/user/reset`,
+                    `${process.env.REACT_APP_API_URL}/api/user/forgot`,
                     dataToSubmit
                 )
                 .then((res) => {
@@ -49,7 +49,7 @@ const ForgotPasswordForm = () => {
                     setTimeout(() => {
                         setShowSuccessPopup(true);
                         setSuccessMessage(
-                            "An email has been sent to you with a reset link."
+                            "An email has been sent to you with a forgot link."
                         );
                     }, 1000);
 
@@ -59,7 +59,7 @@ const ForgotPasswordForm = () => {
                     }, 4000);
                 })
                 .catch((err) => {
-                    console.log(err);
+                    console.log("got here!", err);
                     let errorMessage = err.request.responseText.replace(
                         /['"]+/g,
                         ""
@@ -68,36 +68,35 @@ const ForgotPasswordForm = () => {
                         errorMessage.charAt(0).toUpperCase() +
                         errorMessage.slice(1);
 
-                    setResetErrorMessage(
+                    setForgotErrorMessage(
                         uppercaseFirstLetterMessage ||
-                            uppercaseFirstLetterMessage ||
                             "Issue connecting to the server"
                     );
                     setIsLoading(false);
                     setShowPopup(true);
                     setTimeout(() => {
                         setShowPopup(false);
-                        setResetErrorMessage("");
+                        setForgotErrorMessage("");
                     }, 4000);
                 });
         } else {
-            setResetErrorMessage("Please enter a valid email");
+            setForgotErrorMessage("Please enter a valid email");
             setIsLoading(false);
             setShowPopup(true);
             setTimeout(() => {
                 setShowPopup(false);
-                setResetErrorMessage("");
+                setForgotErrorMessage("");
             }, 4000);
         }
     };
 
     return (
-        <div className="reset-password-form-container">
-            <h2>Reset Password</h2>
+        <div className="forgot-password-form-container">
+            <h2>forgot Password</h2>
             {showPopup ? (
                 <div className="popup-message">
                     <p className="popup-message-paragraph">
-                        {resetErrorMessage}
+                        {forgotErrorMessage}
                     </p>
                 </div>
             ) : null}
@@ -108,10 +107,10 @@ const ForgotPasswordForm = () => {
                     </p>
                 </div>
             ) : null}
-            <form onSubmit={submitHandler} className="reset-password-form">
+            <form onSubmit={submitHandler} className="forgot-password-form">
                 <label htmlFor="email">Email Address</label>
                 <input
-                    className="reset-password-input"
+                    className="forgot-password-input"
                     type="email"
                     name="email"
                     value={email}
@@ -126,8 +125,8 @@ const ForgotPasswordForm = () => {
                 {!isLoading ? (
                     <input
                         type="submit"
-                        value="Reset Password"
-                        className="reset-password-button"
+                        value="forgot Password"
+                        className="forgot-password-button"
                     />
                 ) : null}
                 {isLoading ? (
