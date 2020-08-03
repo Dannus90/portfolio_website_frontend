@@ -1,10 +1,18 @@
 import React from "react";
 import "./card.styles.scss";
 
-const Card = ({ property }) => {
+const Card = ({ property, activeProp }) => {
+    console.log(activeProp);
     const { index, name, text, picture } = property;
     return (
-        <div id={`card-${index}`} className="card">
+        <div
+            id={`card-${index}`}
+            className="card"
+            style={{
+                opacity:
+                    index <= activeProp - 2 || index >= activeProp + 2 ? 0 : "",
+            }}
+        >
             <div className="card__img-container">
                 <img
                     src={picture}

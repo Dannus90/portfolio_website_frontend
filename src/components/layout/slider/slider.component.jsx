@@ -115,11 +115,12 @@ const Slider = () => {
                             }%)`,
                         }}
                     >
-                        {properties.map((property) => (
+                        {properties.map((prop) => (
                             <Card
-                                key={property._id}
-                                property={property}
+                                key={prop._id}
+                                property={prop}
                                 className="sliding-cards"
+                                activeProp={property.index}
                             />
                         ))}
                     </div>
